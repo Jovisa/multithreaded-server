@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'org.jstepanovic'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.beust:jcommander:1.82'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+tasks.jacocoTestReport {
+    dependsOn test
+
+    reports {
+        html.required.set(true)
+        html.outputLocation = layout.buildDirectory.dir('jacoco')
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    "org/jstepanovic/client/model",
+                    "org/jstepanovic/client/Main.class",
+                    "org/jstepanovic/server/model",
+                    "org/jstepanovic/server/Main.class",
+                    "org/jstepanovic/commons/Constants.class"
+            ])
+        }))
+    }
+    finalizedBy(tasks.jacocoTestCoverageVerification)
+}
+
+
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = "0.70".toBigDecimal()
+            }
+        }
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+test {
+    useJUnitPlatform()
+    jacoco {
+        enabled = true
+    }
+    finalizedBy jacocoTestReport // Generate JaCoCo test coverage report after running tests
+}
