@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="client.util.RequestUtilTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-03T14:22:02" hostname="C12390" time="0.042">
-  <properties/>
-  <testcase name="parseRequestFromCommandLine()" classname="client.util.RequestUtilTest" time="0.036"/>
-  <testcase name="parseRequestFromJsonFile()" classname="client.util.RequestUtilTest" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

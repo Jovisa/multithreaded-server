@@ -1,20 +1,0 @@
-Server is running
-Client started!
-*started communication with the new client
-Client started!
-Client started!
-*started communication with the new client
-*started communication with the new client
-Client started!
--Sent: {"type":"get","key":["person","name"]}
--Sent: {"type":"get","key":["person","name"]}
-ùSent: {"type":"set","key":"person","value":{"name":"Elon Musk","car":{"model":"Tesla Roadster","year":"2018"},"rocket":{"name":"Falcon 9","launches":"87"}}}
-6Received: {"response":"ERROR","reason":"No such key"}
-6Received: {"response":"ERROR","reason":"No such key"}
-Received: {"response":"OK"}
-*started communication with the new client
-Client started!
-Sent: {"type":"exit"}
-Received: {"response":"OK"}
-Server is stopping....
-Server is not running
