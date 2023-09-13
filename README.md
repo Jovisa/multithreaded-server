@@ -1,8 +1,14 @@
 # multithreaded-server
+
+Console Application,
 Multithreaded **JSON database** with API enabling CRUD operations
 
 project was completed as a graduate project for Java Developer track on Jet Brains Academy 
 
+
+### Stack:
+- Java 17
+- gradle 8.0.2
 
 ### API contract
 
@@ -50,7 +56,7 @@ and a value 25, the person object should look like this:
 
 If there are no root objects, the server should create them, too. For example, if the database does not have a `"person1"` key but the user set the value 
 ```json
-{"id1": 12, "id2": 14}`
+{"id1": 12, "id2": 14}
 ```
 for the key 
 ```json
